@@ -15,7 +15,7 @@
 ### 1-2. 基于运动物体跟踪的SLAM技术
 这类方法在1-1的基础上对各运动物体进行跟踪，通过时间上的连续性提升分割和定位在动态环境下的鲁棒性。这部分内容主要翻译第一条参考文献中第四章即可。
 - 参考文献 
-> - M. Risqi, et al., Visual SLAM and Structure from Motion in Dynamic Environments: A Survey, ACM Computing Surveys, 2018.
+> - M. Risqi, et al., [Visual SLAM and Structure from Motion in Dynamic Environments: A Survey](https://www.cs.ox.ac.uk/files/9926/Visual%20Slam.pdf), ACM Computing Surveys, 2018.
 > - A. Byravan, et al, SE3-Nets: Learning Rigid Body Motion Using Deep Neural Networks, ICRA, 2017
 > - S. Vijayanarasimhan, et al, SfM-Net: Learning of Structure and Motion from Video, arXiv, 2017
 

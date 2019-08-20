@@ -4,10 +4,12 @@
 ## 文章的基本内容
 文章的基本内容可参照可变场景的SLAM提纲.pdf。我在这里简单列举各部分涉及的内容和参考文献。总共30-40页，每部分大概需要写至少5页。
 
+第一部分主要其实是翻译这篇论文[Visual SLAM and Structure from Motion in Dynamic Environments: A Survey](https://www.cs.ox.ac.uk/files/9926/Visual%20Slam.pdf)， 我在这里给出超链接。
+
 ### 1-1. 基于运动分割的SLAM技术
 这类方法通过将画面中运动区域内的像素点或特征点去除来应对动态环境。这部分内容主要翻译参考文献中第三章即可。
 - 参考文献 
-> - M. Risqi, et al., [Visual SLAM and Structure from Motion in Dynamic Environments: A Survey](https://www.cs.ox.ac.uk/files/9926/Visual%20Slam.pdf), ACM Computing Surveys, 2018.
+> - M. Risqi, et al., Visual SLAM and Structure from Motion in Dynamic Environments: A Survey, ACM Computing Surveys, 2018.
 
 - 主要内容
 > - 参考文献中的3.1.1的初始化需要叙述清楚；3.1.4可扩展一些动态场景下的VIO求解算法； 3.1.5只有最后一段与运动分割相关。注意3.1.3中有邹丹平和章国峰的两个工作
@@ -15,7 +17,7 @@
 ### 1-2. 基于运动物体跟踪的SLAM技术
 这类方法在1-1的基础上对各运动物体进行跟踪，通过时间上的连续性提升分割和定位在动态环境下的鲁棒性。这部分内容主要翻译第一条参考文献中第四章即可。
 - 参考文献 
-> - M. Risqi, et al., [Visual SLAM and Structure from Motion in Dynamic Environments: A Survey](https://www.cs.ox.ac.uk/files/9926/Visual%20Slam.pdf), ACM Computing Surveys, 2018.
+> - M. Risqi, et al., Visual SLAM and Structure from Motion in Dynamic Environments: A Survey, ACM Computing Surveys, 2018.
 > - A. Byravan, et al, SE3-Nets: Learning Rigid Body Motion Using Deep Neural Networks, ICRA, 2017
 > - S. Vijayanarasimhan, et al, SfM-Net: Learning of Structure and Motion from Video, arXiv, 2017
 

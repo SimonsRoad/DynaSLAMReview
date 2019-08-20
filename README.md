@@ -67,7 +67,7 @@
 > - 这部分主要是突破static world的假设，获得了一个统一的空间表示形式
 
 ## Latex写作相关信息
-Latex的一些基本的图标等命令在example.tex内写好，编译后可对应pdf的显示内容进行参考。
+Latex的一些基本的图表命令已经在example.tex内写好，编译后可对应pdf的显示内容进行参考。
 
 ### 文章结构
 按照之前整理的提纲，文章分文两个section，每个section下各有三个subsection。大家只需要在srcs文件夹下找到自己对应的subsection的.tex进行编写，再在report.tex下用XeLaTeX编译即可查看（编译方式在tex已经写好，应该不需要特别设置，直接编译即可生成pdf）

@@ -24,7 +24,7 @@
 > - 4.1.1和4.1.2的方法大致思路讲清楚，涉及到具体的公式如果不太明白可以篇幅少一些。我的理解4.1.1就是迭代做RANSAC一类的，4.1.2就是类似于PCA找多个成分的方法，4.1.3和后面multi-body SfM类似不用写，4.1.4 深度学习的方法可以找框图扩充一下，这两个网络比较简单，包括上次老乔和李顺恺读的CVPR 2019的两篇论文也是类似的把背景和前景拆分开的思路
 > - 4.2.1和4.2.2其实就是把SLAM解决完全刚体的情况扩展成多个刚体来做，这里要写清楚tracking建立了各个运动物体的temporal consistency，可以提高分割和定位的鲁棒性，这部分写一页半左右就差不多
 
-### 1-3. 非刚体和多刚体下的SfM技术
+### 1-3. 非刚体和多刚体运动下的SfM技术
 这类方法将静态SfM扩展为多个刚体(或者多个刚体运动下的控制点)的SfM问题进行求解。
 - 参考文献 
 > - M. Risqi, et al., Visual SLAM and Structure from Motion in Dynamic Environments: A Survey, ACM Computing Surveys, 2018.

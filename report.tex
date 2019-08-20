@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage{amsmath, amsfonts, amssymb} % math equations, symbols
+\usepackage[english]{babel}
+\usepackage{color}      % 用来给注释部分上色的package
+\usepackage{graphicx}   % import figures
+\usepackage{url}        % hyperlinks
+\usepackage{bm}         % bold type for equations
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\bibliographystyle{ieee}
+
+\setmainfont[Mapping=tex-text]{SimSun}
+\title{动态场景下的SLAM相关技术总结报告}
+\author{ 作者 Author \thanks{作者介绍 Brief introduction} }
+\date{\today}
+%!TEX program = xelatex
+
+\newcommand{\setmode}[1]{\def\mode{#1}}
+%\setmode{final} % final OR draft
+\setmode{draft} % final OR draft
+\long\def\IGNORE#1{} \long\def\COMMENT#1{}
+\def\authornote#1#2#3{{\textcolor{#2}{\textsl{\small#1:[*#3*]}}}}
+\ifthenelse{\equal{\mode}{draft}} {
+	\newcommand{\zknote}[1]{\authornote{ZK}{red}{#1}} % Zike
+	\newcommand{\wxnote}[1]{\authornote{WX}{green}{#1}} % Xin
+	\newcommand{\rknote}[1]{\authornote{RK}{cyan}{#1}} % Qiao
+	\newcommand{\pjnote}[1]{\authornote{PJ}{magenta}{#1}} % PJ
+	\newcommand{\zsnote}[1]{\authornote{ZS}{yellow}{#1}} % Zsh
+	\newcommand{\sknote}[1]{\authornote{SK}{blue}{#1}} % Shunkai
+} {}
+
+\ifthenelse{\equal{\mode}{final}} {
+	\newcommand{\zknote}[1]{}
+	\newcommand{\wxnote}[1]{}
+	\newcommand{\rknote}[1]{}
+	\newcommand{\pjnote}[1]{}
+	\newcommand{\zsnote}[1]{}
+	\newcommand{\sknote}[1]{}
+	\typeout{************* MODE: Final}
+} {}
+
+\begin{document}
+	%%%%%%%%% ABSTRACT
+	\begin{abstract}
+		摘要	
+	\end{abstract}
+	
+	\maketitle
+	%%%%%%%%% BODY
+	注释测试：\\
+	\zknote{这句话用来test comment command}\\
+	\wxnote{这句话用来test comment command}\\
+	\rknote{这句话用来test comment command}\\
+	\pjnote{这句话用来test comment command}\\
+	\zsnote{这句话用来test comment command}\\
+	\sknote{这句话用来test comment command}\\
+	
+	\section{动态环境下的SLAM系统}
+	\label{sec:slam}
+	\input{srcs/1-1.tex}
+	\input{srcs/1-2.tex}
+	\input{srcs/1-3.tex}
+	\section{长时变化环境下的地图更新}
+	\label{sec:mapping}
+	\input{srcs/2-1.tex}
+	\input{srcs/2-2.tex}
+	\input{srcs/2-3.tex}
+	\cite{Dosovitskiy15cvpr}
+	
+	\bibliography{mybibfile}
+	
+\end{document}

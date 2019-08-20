@@ -7,7 +7,7 @@
 ### 1-1. 基于运动分割的SLAM技术
 这类方法通过将画面中运动区域内的像素点或特征点去除来应对动态环境。这部分内容主要翻译参考文献中第三章即可。
 - 参考文献 
-> - M. Risqi, et al., Visual SLAM and Structure from Motion in Dynamic Environments: A Survey, ACM Computing Surveys, 2018.
+> - M. Risqi, et al., [Visual SLAM and Structure from Motion in Dynamic Environments: A Survey](https://www.cs.ox.ac.uk/files/9926/Visual%20Slam.pdf), ACM Computing Surveys, 2018.
 
 - 主要内容
 > - 参考文献中的3.1.1的初始化需要叙述清楚；3.1.4可扩展一些动态场景下的VIO求解算法； 3.1.5只有最后一段与运动分割相关。注意3.1.3中有邹丹平和章国峰的两个工作

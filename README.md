@@ -84,6 +84,7 @@ Latex的一些基本的图表命令已经在example.tex内写好，编译后可�
 |公式|图片|表格|章|
 |---|---|---|---|
 |eq:|fig:|tab:|sec:|
+
 子模块在前方加入sub,比如子图label为**subfig:**
 
 **需要注意的是，图片的caption在所有图片includegraphics之后再写caption，而表格则是先写caption再添加表格。caption最后需要加上句号，公式后面也需要加上逗号或句号。**

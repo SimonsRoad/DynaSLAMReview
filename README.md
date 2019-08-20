@@ -47,7 +47,7 @@
 - 参考文献 
 > - B. Xu, et al., MID-Fusion: Octree-based Object-Level Multi-Instance Dynamic SLAM, ICRA, 2019.
 > - M. Runz, et al., MaskFusion: Real-Time Recognition, Tracking and Reconstruction of Multiple Moving Objects, ISMAR 2018. Related Work - Dynamic SLAM这一小节
-> - M. Runz, et al., Co-fusion: Real-time segmentation, tracking ¨ and fusion of multiple objects, ICRA 2017. 有一些其它的算法
+> - M. Runz, et al., Co-fusion: Real-time Segmentation, Tracking and Fusion of Multiple Objects, ICRA 2017. 有一些其它的算法
 > - H. Zhang and F. Xu, MixedFusion: Real-Time Reconstruction of an Indoor Scene with Dynamic Objects, TVCG 2017.
 > - S. Caccamo et al., Joint 3D Reconstruction of a Static Scene and Moving Objects, 3DV 2017. object SLAM相关
 

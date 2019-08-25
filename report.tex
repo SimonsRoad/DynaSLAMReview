@@ -4,6 +4,7 @@
 \title{\fontsize{40}{60}\selectfont 动态场景下的SLAM\\相关技术总结报告}
 %\author{ 作者 Author }
 \date{\chdate\today}
+
 %!TEX program = xelatex
 
 \newcommand{\setmode}[1]{\def\mode{#1}}
@@ -32,9 +33,6 @@
 
 
 
-%\XeTeXlinebreaklocale "zh"
-%\XeTeXlinebreakskip = 0pt plus 1pt
-
 \begin{document}
 %%%%%%%%% ABSTRACT
 
@@ -42,13 +40,6 @@
 
 \tableofcontents
 %%%%%%%%% BODY
-注释测试：\\
-\zknote{这句话用来test comment command}\\
-\wxnote{这句话用来test comment command}\\
-\rknote{这句话用来test comment command}\\
-\pjnote{这句话用来test comment command}\\
-\zsnote{这句话用来test comment command}\\
-\sknote{这句话用来test comment command}\\
 
 
 \chapter{动态环境下的SLAM系统}
@@ -58,14 +49,15 @@
 \label{sec:slam}
 \input{srcs/1-1.tex}
 \input{srcs/1-2.tex}
+\input{srcs/1-2-2.tex}
 \input{srcs/1-3.tex}
 \chapter{长时变化环境下的地图更新}
 \label{sec:mapping}
 \input{srcs/2-1.tex}
 \input{srcs/2-2.tex}
 \input{srcs/2-3.tex}
-\cite{Dosovitskiy15cvpr}
 
+\bibliographystyle{unsrt}
 \bibliography{mybibfile}
 	
 \end{document}

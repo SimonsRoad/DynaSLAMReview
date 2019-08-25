@@ -13,6 +13,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{geometry}
+\usepackage{subfig}
 
 \geometry{a4paper,scale=0.7}
 
@@ -54,23 +55,26 @@
 \begin{document}
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-	摘要	
+	视觉SLAM技术在过去的十年取得了飞速的发展，并在计算机视觉和机器人领域有着广泛的应用。但是，绝大多数的视觉SLAM算法都建立在静态环境的假设下。当环境因为物体运动而发生改变时，系统的定位精度将会受到很大影响。在这篇技术报告中，我们对现有针对运动场景的SLAM和SfM技术进行了调研。一部分算法将运动区域的输入数据作为外点（outlier）剔除，来维护静态世界的基本假设；另一部分算法则同时解决静态环境和动态物体的结构和姿态估计。在序言部分，我们总结了动态环境中运动估计违背静态世界假设的基本约束，以及这些基本约束在动态环境下的基本延伸。同时，我们整理归纳了针对动态场景的代表性SLAM算法。我们将文献综述归纳为两类：一类算法以传感器为考虑的重点,基于经典的SfM框架来解决这一问题；另一类算法以地图为考虑的重点，更侧重于维护合适的稠密地图来解决这一问题。	
 \end{abstract}
 
 \maketitle
 %%%%%%%%% BODY
-
+\section{序言}
+\label{sec:preliminaries}
+\input{section/1.tex}
 \section{动态环境下的SLAM系统}
 \label{sec:slam}
-\input{srcs/1-1.tex}
-\input{srcs/1-2.tex}
-\input{srcs/1-2-2.tex}
-\input{srcs/1-3.tex}
-\section{长时变化环境下的地图更新}
-\label{sec:mapping}
-\input{srcs/2-1.tex}
-\input{srcs/2-2.tex}
-\input{srcs/2-3.tex}
+\input{section/2.tex}
+%\input{srcs/1-1.tex}
+%\input{srcs/1-2.tex}
+%\input{srcs/1-2-2.tex}
+%\input{srcs/1-3.tex}
+
+\input{section/3.tex}
+%\input{srcs/2-1.tex}
+%\input{srcs/2-2.tex}
+%\input{srcs/2-3.tex}
 
 \bibliographystyle{unsrt}
 \bibliography{mybibfile}

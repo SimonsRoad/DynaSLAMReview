@@ -3,7 +3,7 @@
 	[2015/02/10 v1.0 beta1 Notes Template]
 
 
-\LoadClass[a4paper,11pt,UTF8,zihao = -4]{ctexrep}
+\LoadClass[a4paper,UTF8,zihao = -4]{ctexrep}
 %\LoadClass[a4paper,11pt,UTF8]{book}
 
 

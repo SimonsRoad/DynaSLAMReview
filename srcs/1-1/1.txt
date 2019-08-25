@@ -1,0 +1,28 @@
+8
+An example of the hypothesized association in (a) frame 230 and (b)
+frame 233; the blue boxes represent the detections, and the red box is the
+inserted hypothesized association.
+
+9
+An example of the depth map, showing (a) detections and (b)
+depth map, where higher intensity indicates detected pedestrians are closer
+to the camera
+
+9-1
+The classifier response (heat map) visualized for one tracking
+target (white). As the classifier is adapted continuously, it becomes more
+discriminative (right: 20 frames later)
+
+16
+Figure 6: (a) Video input frame; (b) segmentation output of SuBSENSE
+
+16-1
+ Network input and output: (a) Background image of the input pair. (b) Input frame. (c) Network output.
+
+38
+ The proposed deep learning framework for motion
+segmentation from a moving stereo camera.
+
+43
+ Overview of the Proposed Method of Recurrent
+FCN. The recurrent part is unrolled for better visualisation

@@ -127,7 +127,7 @@ Sturm 和 Trigss\cite{Sturm1996A} 根据基本矩阵和极点的约束对式\eqr
 
 针对射影相机的另一个处理方式是Liu等人\cite{Feng2013Joint}所采用的小运动近似的方式。这种方式中假设在视频序列中相机的运动相对与帧率来说非常缓慢，每帧之间的旋转运动较小，可以使用李代数到旋转矩阵的一阶泰勒展开做为近似，在这个近似下线性关系更加明确，能够得到简单的观测矩阵。
 \subsection{针对多刚体系统的观测矩阵分解}
-我们先从静态世界或者整体就是一个刚体的系统进行考虑，通过\ref{subsec:subspace}节的方式，我们可以在一个视频序列中得到它的观测矩阵$W\in \mathbb{R^{2f\times p}}$，这里$f$是帧数$p$是三维点数。根据\ref{subsec:measurementMatrix}节中的推导，我们可以看出这个观测矩阵可以分解成运动矩阵$M\in \mathbb{R}^{2f\times 4}$和形状矩阵$S\in\mathbb{R}^{4\times p}$即如式\eqref{eq:Factorization}所示：
+我们先从静态世界或者整体就是一个刚体的系统进行考虑，通过\ref{subsec:subspace}节的方式，我们可以在一个视频序列中得到它的观测矩阵$W\in \mathbb{R}^{2f\times p}$，这里$f$是帧数$p$是三维点数。根据\ref{subsec:measurementMatrix}节中的推导，我们可以看出这个观测矩阵可以分解成运动矩阵$M\in \mathbb{R}^{2f\times 4}$和形状矩阵$S\in\mathbb{R}^{4\times p}$即如式\eqref{eq:Factorization}所示：
 \begin{equation}\label{eq:Factorization}
 W=M S .
 \end{equation}

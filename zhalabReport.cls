@@ -19,6 +19,7 @@
 \RequirePackage{epsfig}
 \RequirePackage{algorithm}
 \RequirePackage{algorithmic}
+\RequirePackage{subfig}
 
 \RequirePackage{enumitem, cite}
 \RequirePackage{setspace, geometry, indentfirst, times, color}

@@ -1,0 +1,2 @@
+Fig. 2. LEFT: The world point P moves non-degenerately to P' and hence x', the image of P' does not lie on the epipolar line corresponding to x.
+RIGHT: The point P moves degenerately in the epipolar plane to P'. Hence, despite moving, its image point lies on the epipolar line corresponding to the image of P.

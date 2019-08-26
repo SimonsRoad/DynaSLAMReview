@@ -1,6 +1,5 @@
 \section{动态环境下的SLAM系统}
-\subsection{基于运动分割的SLAM技术}
-\label{subsec:motion_segmentation}
+\label{sec:motion_segmentation}
 动态分割（又称为移动物体检测/分割\cite{Derome2015Moving, Klappstein2008Moving, kundu2009movingA}）透过将特征区分为两类特征，静态和动态特征，以检测图像中移动的区块。
 明确地说，给定在图像空间中的特征点集合，动态分割将特征点聚类为静态集合和动态集合。
 传统的视觉SLAM使用鲁棒的静态方法，计算几何模型（如基本矩阵、单应矩阵）来实现动态分割。
@@ -24,13 +23,13 @@
 
 大部分前景初始化的实现方法使用tracking-by-detection结构\cite{Breitenstein2010Online, Lee2014Driving}，如图\ref{fig:tracking_by_detection}所示。Wangsiripitak等人\cite{Wangsiripitak2009Avoiding}假设对于一个三维物体，它的动态特征的位置是已知的。他们用边上的控制点集建模一个三维多面体模型，然后使用Harris’s RaPid tracker\cite{Harris1990RAPID}对其进行跟踪。如果之前跟踪的特征位于跟踪中的三维多面体上，当检测到这个物体处于移动状态时，便将特征剔除。被这个物体遮挡的静态特征也会被剔除。相似地，Wang等人\cite{Wang2010Visual}假设移动中的物体上的SURF特征描述子\cite{Bay2008Speeded}是已知的并存在数据库中。通过比较在特征检测步骤得到的描述子，就可以识别移动中的物体，也可以估算它的位移和旋转。Chhaya等人\cite{Chhaya2016Monocular}使用deformable wireframe object class model对建模相机前方的车辆。这个模型使用Principal Component Analysis (PCA) 在3D CAD data上训练而得。这个模型用在位姿估计得过程将车子识别并分割出来。另一方面，Lee等人\cite{Lee2014Driving, Lee2016Ground}基于tracking-by-detection结构，他们使用Constrained Multiple-Kernel(CMK)法，利用深度信息处理跟踪过程中的遮挡问题，同时使用预训练的人类检测器来跟踪行人。
 
-有别于初始化前景的物体，背景初始化采用背景提取（background subtraction）技术 \cite{Babaee2017A,Piccardi2005Background}， 如图\ref{}所示。Zhang等人\cite{Zhang2012Visual}初始化属于背景的特征点集合，并令这个集合为背景的模型。他们假设当首次进行视觉的初始化时，是没有前景物体的。当经过新的一帧后，使用GPCA\cite{Ren2005Generalized}进行三维动态分割。分割出来的动态部分，对于先前的背景模型具有最高响应值部分，将会用来更新背景。根据新的背景模型，运用标准的对极几何法估计位姿。
+有别于初始化前景的物体，背景初始化采用背景提取（background subtraction）技术 \cite{Babaee2017A,Piccardi2005Background}， 如图\ref{fig:bgsub}所示。Zhang等人\cite{Zhang2012Visual}初始化属于背景的特征点集合，并令这个集合为背景的模型。他们假设当首次进行视觉的初始化时，是没有前景物体的。当经过新的一帧后，使用GPCA\cite{Ren2005Generalized}进行三维动态分割。分割出来的动态部分，对于先前的背景模型具有最高响应值部分，将会用来更新背景。根据新的背景模型，运用标准的对极几何法估计位姿。
 
 \begin{figure}[thbp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figs/1-1/subback.png}
 	\caption{基于~\cite{Babaee2017A}的背景提取结果。}
-	\label{fig:tracking_by_detection}
+	\label{fig:bgsub}
 \end{figure}
 
 \subsubsection{基于几何约束的运动分割}

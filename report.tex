@@ -54,23 +54,23 @@
 
 \begin{document}
 %%%%%%%%% ABSTRACT
-\begin{abstract}
-	视觉SLAM技术在过去的十年取得了飞速的发展，并在计算机视觉和机器人领域有着广泛的应用。但是，绝大多数的视觉SLAM算法都建立在静态环境的假设下。当环境因为物体运动而发生改变时，系统的定位精度将会受到很大影响。在这篇技术报告中，我们对现有针对运动场景的SLAM和SfM技术进行了调研。一部分算法将运动区域的输入数据作为外点（outlier）剔除，来维护静态世界的基本假设；另一部分算法则同时解决静态环境和动态物体的结构和姿态估计。在序言部分，我们总结了动态环境中运动估计违背静态世界假设的基本约束，以及这些基本约束在动态环境下的基本延伸。同时，我们整理归纳了针对动态场景的代表性SLAM算法。我们将文献综述归纳为两类：一类算法以传感器为考虑的重点,基于经典的SfM框架来解决这一问题；另一类算法以地图为考虑的重点，更侧重于维护合适的稠密地图来解决这一问题。	
-\end{abstract}
 
 \maketitle
 %%%%%%%%% BODY
 \section{序言}
 \label{sec:preliminaries}
-\input{section/1.tex}
-\label{sec:slam}
-\input{section/2.tex}
+视觉SLAM技术在过去的十年取得了飞速的发展，并在计算机视觉和机器人领域有着广泛的应用。但是，绝大多数的视觉SLAM算法都建立在静态环境的假设下。当环境因为物体运动而发生改变时，系统的定位精度将会受到很大影响。在这篇技术报告中，我们首先整理归纳了总结了从静态环境到多刚体和非刚体运动下的SLAM/SfM的基本建模方法和求解思路。随后，我们对现有针对运动场景的SLAM和SfM技术进行了调研。目前常见的算法可以分为两大类：一部分算法将运动区域的输入数据作为外点（outlier）剔除，来维护静态世界（static world）的基本假设。在第\ref{sec:motion_segmentation}章，我们总结归纳了常见的运动分割方法。这类方法主要通过找到违背SLAM问题基本几何约束，比如极线约束（）epipolar constraint）、重投影约束（reprojection）以及图像映射（warping）来进行运动状态的判断。另一类算法则同时解决静态环境和动态物体的结构和姿态估计，这类方法不但需要确定观测数据的运动状态类别，还需要将属于不同运动模型的区域拆分开来。在第\ref{sec:object_tracking}章，我们总结归纳了常见的动态物体分割的方法。这类方法主要通过基于统计方法的模型选择或者子空间聚类方法将观测数据拆解为各个部分。在第\ref{sec:learning}章，我们归纳总结了深度学习利用高阶特征提取上的优势来端到端地获取运动区域或动态物体掩模的主要方法。最后，我们针对长时变化环境下的地图更新进行了相关的文献综述。
+\input{section/1.tex} %non-rigid SfM
+\input{section/2.tex} %motion segmentation
+\input{section/3.tex} %object segmentation
+\input{section/4.tex} %learning based
+\input{section/5.tex} %mapping
 %\input{srcs/1-1.tex}
 %\input{srcs/1-2.tex}
 %\input{srcs/1-2-2.tex}
 %\input{srcs/1-3.tex}
 
-\input{section/3.tex}
+
 %\input{srcs/2-1.tex}
 %\input{srcs/2-2.tex}
 %\input{srcs/2-3.tex}

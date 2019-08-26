@@ -169,7 +169,7 @@ S_1 & &\\
 \begin{equation}\label{eq:shapeInteractionMatrix}
 Q=VV^T\in \mathbb{R}^{p\times p}.
 \end{equation}
-式\eqref{eq:shapeInteractionMatrix}具有一个特殊的形状，当两个特征序列分别属于是两个刚体的时候，$Q$的元素会是0。 这个特性可以在数学上得到证明\cite{Kanatani2001Motion}。 在这个理论基础上，矩阵分解的求解过程可以基于对$Q$的排序和元素大小的限制来或得不同刚体的分割以及三维信息的重建。
+式\eqref{eq:shapeInteractionMatrix}具有一个特殊的形状，当两个特征序列分别属于是两个刚体的时候，$Q$的元素会是0。 这个特性可以在数学上得到证明\cite{kanatani2001motionA}。 在这个理论基础上，矩阵分解的求解过程可以基于对$Q$的排序和元素大小的限制来或得不同刚体的分割以及三维信息的重建。
 在\cite{Costeira1998A}中，这种运动刚体的分割和聚类是通过最大化式\eqref{eq:multibodyFactorization}中$S$的对角元素，并且利用$Q$来约束对角线上的每个块应当属于不同的刚体的约束这样的方式进行求解。Ichimura\cite{Ichimura1999Motion} 使用在\cite{Ostu2007A}中最大化不同子空间的差异性的判别准则将$Q$中的不同刚体到不同的刚体。
 \subsection{针对非刚性运动的观测矩阵分解}
 假如场景中的物体是非刚性运动的时候，情况会非常复杂。Bregler\cite{Bregler2013Recovering}等针对非刚性运动恢复结构上针对垂直投影相机提出了第一个观测矩阵分解的方式。他们的核心想法是将一个非刚体的物体表示成一组基的组合，认为这个刚体在这些帧中的运动过程可以在这个状态空间中进行近似表示。比如我们选择$k$个关键帧中的结构作为一组基${B_i}_{i=1}^k$，其中每个$B_i$代表了一个$3\times p$的矩阵，表示了$p$个特征点。这组基的线性组合$B=\sum_{i=1}^k{l_i B_i}$可以确定一个刚体的描述，其中$l_i\in \mathbb{R}$是一组系数。通过\cite{Tomasi1992Shape}中的方法进行中心化并消去平移向量之后，可以将观测矩阵表示成式\eqref{eq:nonrigidMeasurementMatrix}所示：

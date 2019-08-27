@@ -1,6 +1,6 @@
-\section{非刚体和多刚体运动下的SfM技术}
+\chapter{非刚体和多刚体运动下的SfM技术}
 \label{sec:non-rigid_SfM}
-为了处理场景中的动态物体，如之前所述将场景中不同运动物体进行分割，并对这些不同运动的物体分别进行三维重建是一个比较直接的方案。但考虑到所有物体的运动和三维信息同时都反应到了视频序列中，理论上这些物体的运动和三维信息可以同时进行求解\cite{Tomasi1992Shape}。在给定特征对应或者像素对应关系的基础上，基于矩阵分解的方式可以从表示了图像序列的特征矩阵中同时求解出动态物体的分割、恢复出各自物体的运动信息以及场景和物体的三维信息。如图\cite{zappella2013joint}所示，这些方法根据场景三维结构在相机运动的模型下生成图像序列的过程，推导出最终的特征矩阵的特性。根据不同物体运动不同在矩阵中反应出的不同性质，对矩阵进行重新组织，并可以根据图像序列的生成模型将每部分的矩阵分解乘包含了相机运动的矩阵乘以三维信息的形式，利用矩阵中提供的约束同时完成运动物体分割、运动求解以及三维信息恢复。
+为了处理场景中的动态物体，一般将场景中不同运动物体进行分割，并对这些不同运动的物体分别进行三维重建是一个比较直接的方案。但考虑到所有物体的运动和三维信息同时都反应到了视频序列中，理论上这些物体的运动和三维信息可以同时进行求解\cite{Tomasi1992Shape}。在给定特征对应或者像素对应关系的基础上，基于矩阵分解的方式可以从表示了图像序列的特征矩阵中同时求解出动态物体的分割、恢复出各自物体的运动信息以及场景和物体的三维信息。如图\cite{zappella2013joint}所示，这些方法根据场景三维结构在相机运动的模型下生成图像序列的过程，推导出最终的特征矩阵的特性。根据不同物体运动不同在矩阵中反应出的不同性质，对矩阵进行重新组织，并可以根据图像序列的生成模型将每部分的矩阵分解乘包含了相机运动的矩阵乘以三维信息的形式，利用矩阵中提供的约束同时完成运动物体分割、运动求解以及三维信息恢复。
 
 \begin{figure}[thbp]
 	\centering
@@ -9,7 +9,7 @@
 	\label{fig:rhino}
 \end{figure}
 
-\subsection{视频序列帧中特征变化的子空间约束}\label{subsec:subspace}
+\section{视频序列帧中特征变化的子空间约束}\label{subsec:subspace}
 与一般对特征的处理相同，假如我们可以跟踪到视频序列中的一系列特征，比如使用光流等方法\cite{Fanani2016Keypoint}，如图\ref{fig:feature_trajectory}所示。为了便于推导，我们在这里假设这些特征在1至f帧之间均连续观测到，噪声和缺失的情况会另外探讨。我们将观测到的特征点记做$x_{ij}=(u_{ij},v_{ij})$，其中下标中$i$代表第$i$帧，$j$代表第$j$个特征点。由于这些特征点是由相机在三维空间中运动生成的，所以这一系列特征点应当连续变化并与三维场景和相机运动对应。我们将这些特征点的坐标根据编号和时间序列排布到一个矩阵中，如式\eqref{eq:measurementMatrix}所示，纵坐标方向上按照帧的时间顺序排列，横坐标按照特征点的编号排列。
 
 \begin{equation}\label{eq:measurementMatrix}
@@ -32,7 +32,7 @@ v_{f1}& \cdots & v_{fp}
 \end{figure}
 
 通过矩阵分解的方式联合求解摄像机运动和三维信息，是SfM中一个重要的方法。这种方法具有优雅的数学描述，充分的考虑到了特征之间在空间和时间上的关联约束。这种方法最早由Tomasi和Kanade\cite{Tomasi1992Shape}根据秩理论在1992年提出。他们的理论指出，在一个面向静态场景的较短的序列中，包含了在整个帧序列上所有跟踪到的特征点的观测矩阵（measurement matrix），它的秩最多是4。特别的对欧式坐标系下的垂直投影来说秩最多是3\cite{Costeira1995A,Tomasi1992Shape,Irani2002Multi,Liu2011Subspace}。这种秩下的约束表明了这些特征点在时间变化是有明显关联的。
-\subsection{观测矩阵与相机运动及三维结构的关系}\label{subsec:measurementMatrix}
+\section{观测矩阵与相机运动及三维结构的关系}\label{subsec:measurementMatrix}
 观测矩阵是由相机的运动和三维点共通生成的，本节主要讲观测矩阵与这两个信息之间有什么样的关系。
 由于垂直投影垂直投影形式较为简单，故我们先从垂直投影的情形来做说明\cite{Tomasi1992Shape}。垂直投影的形式如式\eqref{eq:orthogonalProjection}所示，是三维点的$x,y$分量的直接映射。
 \begin{equation}\label{eq:orthogonalProjection}
@@ -133,7 +133,7 @@ Sturm 和 Trigss\cite{Sturm1996A} 根据基本矩阵和极点的约束对式\eqr
 其中$m,n\in{1,2,\cdots,f}$，$F_{mn}$和$e_{mn}$分别为$m$对$n$帧之间定义的基本矩阵和极点。在求解得所有的深度尺度$\lambda_{mp}$之后我们就可以得到射影相机模型下的观测矩阵。
 
 针对射影相机的另一个处理方式是Liu等人\cite{Feng2013Joint}所采用的小运动近似的方式。这种方式中假设在视频序列中相机的运动相对与帧率来说非常缓慢，每帧之间的旋转运动较小，可以使用李代数到旋转矩阵的一阶泰勒展开做为近似，在这个近似下线性关系更加明确，能够得到简单的观测矩阵。
-\subsection{针对多刚体系统的观测矩阵分解}
+\section{针对多刚体系统的观测矩阵分解}
 我们先从静态世界或者整体就是一个刚体的系统进行考虑，通过\ref{subsec:subspace}节的方式，我们可以在一个视频序列中得到它的观测矩阵$W\in \mathbb{R^{2f\times p}}$，这里$f$是帧数$p$是三维点数。根据\ref{subsec:measurementMatrix}节中的推导，我们可以看出这个观测矩阵可以分解成运动矩阵$M\in \mathbb{R}^{2f\times 4}$和形状矩阵$S\in\mathbb{R}^{4\times p}$即如式\eqref{eq:Factorization}所示：
 \begin{equation}\label{eq:Factorization}
 W=M S .
@@ -176,7 +176,7 @@ Q=VV^T\in \mathbb{R}^{p\times p}.
 \end{equation}
 式\eqref{eq:shapeInteractionMatrix}具有一个特殊的形状，当两个特征序列分别属于是两个刚体的时候，$Q$的元素会是0。 这个特性可以在数学上得到证明\cite{kanatani2001motionA}。 在这个理论基础上，矩阵分解的求解过程可以基于对$Q$的排序和元素大小的限制来或得不同刚体的分割以及三维信息的重建。
 在\cite{Costeira1998A}中，这种运动刚体的分割和聚类是通过最大化式\eqref{eq:multibodyFactorization}中$S$的对角元素，并且利用$Q$来约束对角线上的每个块应当属于不同的刚体的约束这样的方式进行求解。Ichimura\cite{Ichimura1999Motion} 使用在\cite{Ostu2007A}中最大化不同子空间的差异性的判别准则将$Q$中的不同刚体到不同的刚体。
-\subsection{针对非刚性运动的观测矩阵分解}
+\section{针对非刚性运动的观测矩阵分解}
 假如场景中的物体是非刚性运动的时候，情况会非常复杂。Bregler\cite{Bregler2013Recovering}等针对非刚性运动恢复结构上针对垂直投影相机提出了第一个观测矩阵分解的方式。他们的核心想法是将一个非刚体的物体表示成一组基的组合，认为这个刚体在这些帧中的运动过程可以在这个状态空间中进行近似表示。比如我们选择$k$个关键帧中的结构作为一组基${B_i}_{i=1}^k$，其中每个$B_i$代表了一个$3\times p$的矩阵，表示了$p$个特征点。这组基的线性组合$B=\sum_{i=1}^k{l_i B_i}$可以确定一个刚体的描述，其中$l_i\in \mathbb{R}$是一组系数。通过\cite{Tomasi1992Shape}中的方法进行中心化并消去平移向量之后，可以将观测矩阵表示成式\eqref{eq:nonrigidMeasurementMatrix}所示：
 \begin{equation}\label{eq:nonrigidMeasurementMatrix}
 \tilde{W}=N B=
